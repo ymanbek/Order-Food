@@ -14,7 +14,7 @@ type ButtonCommonProps = ButtonProps & React.ButtonHTMLAttributes<HTMLElement>;
 const variantClasses = {
   primary: {
     default:
-      "bg-[#8a2b06] text-white cursor-pointer flex flex-row items-center h-[15px]",
+      "bg-[#8a2b06] text-white cursor-pointer flex flex-row items-center min-h-[38px]",
     hover: "hover:bg-[#7e2a0a]",
     active: "active:bg-[#993108] active:scale-[1.01]",
   },
@@ -28,13 +28,13 @@ const variantClasses = {
 
 const buttonSizeClasses = {
   small: "rounded-md px-[14px] py-[8px]",
-  large: "rounded-md py-[10px] px-[5px] text-[8px] ",
+  large: "rounded-3xl px-[32px] py-[10px] ",
 };
 
 const Button = (props: ButtonCommonProps) => {
   const { children, leftIcon, rightIcon, variant, size, ...rest } = props;
 
-  const hasIconSpaces = rightIcon || leftIcon ? "gap-[2px]" : "gap-[0px]";
+  const hasIconSpaces = rightIcon || leftIcon ? "gap-[10px]" : "gap-[0px]";
   const buttonClasses = variantClasses[variant];
 
   return (
