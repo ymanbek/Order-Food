@@ -1,7 +1,7 @@
 interface OrderItemInfoProps {
   title: string;
   price: number;
-  amount: string;
+  amount: number;
 }
 
 const OrderItemInfo = ({ title, price, amount }: OrderItemInfoProps) => {

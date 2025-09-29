@@ -11,7 +11,7 @@ export interface MenuTypes {
   title: string;
   description: string;
   price: number;
-  amount?: string;
+  amount?: number;
 }
 
 const App = () => {
@@ -68,7 +68,7 @@ const App = () => {
     if (existingOrder) {
       const updatedOrders = order.map((item) => {
         if (item.id === id) {
-          item.amount = String(Number(existingOrder.amount) + Number(amount));
+          item.amount = Number(Number(existingOrder.amount) + Number(amount));
         }
         return item;
       });
@@ -83,7 +83,7 @@ const App = () => {
       <Menu menu={meals} onAdd={addOrderHandler} />
 
       <Modal isOpen={modal} onClose={modalHandler}>
-        <Orders onClose={modalHandler} orders={order} />
+        <Orders onClose={modalHandler} orders={order} setOrders={setOrder} />
       </Modal>
     </div>
   );

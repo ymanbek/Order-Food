@@ -18,7 +18,7 @@ const MenuActions = (props: {
     elem.preventDefault();
     const amount = inputRef.current?.value;
     const food = {
-      amount: amount ? amount : "1",
+      amount: amount ? +amount : 1,
       id: id,
       title: title,
       description: description,
